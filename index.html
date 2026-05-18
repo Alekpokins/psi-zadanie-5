@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styl.css">
+  <title>Frontend Mentor | FAQ accordion</title>
+</head>
+<body>
+  <main>
+    <div class="card">
+      <div class="card__header">
+        <img src="icon-star.svg" class="icon-star" aria-hidden="true">
+        <h1>FAQs</h1>
+      </div>
+      <ul class="accordion">
+        <li class="accordion__item accordion__item--open">
+          <button class="accordion__btn" aria-expanded="true">
+            <span class="accordion__question">What is Frontend Mentor, and how will it help me?</span>
+            <span class="accordion__icon-wrap accordion__icon-wrap--minus">
+              <img src="icon-minus.svg" aria-hidden="true">
+            </span>
+          </button>
+          <div class="accordion__body">
+            <p>Frontend Mentor offers realistic coding challenges to help developers improve their frontend coding skills with projects in HTML, CSS, and JavaScript. It's suitable for all levels and ideal for portfolio building.</p>
+          </div>
+        </li>
+        <li class="accordion__item">
+          <button class="accordion__btn" aria-expanded="false">
+            <span class="accordion__question">Is Frontend Mentor free?</span>
+            <span class="accordion__icon-wrap">
+              <img src="icon-plus.svg" aria-hidden="true">
+            </span>
+          </button>
+          <div class="accordion__body" hidden>
+            <p>Yes, Frontend Mentor offers both free and premium coding challenges, with the free option providing access to a range of projects suitable for all skill levels.</p>
+          </div>
+        </li>
+        <li class="accordion__item">
+          <button class="accordion__btn" aria-expanded="false">
+            <span class="accordion__question">Can I use Frontend Mentor projects in my portfolio?</span>
+            <span class="accordion__icon-wrap">
+              <img src="icon-plus.svg" aria-hidden="true">
+            </span>
+          </button>
+          <div class="accordion__body" hidden>
+            <p>Yes, you can use projects completed on Frontend Mentor in your portfolio. It's an excellent way to showcase your skills to potential employers!</p>
+          </div>
+        </li>
+        <li class="accordion__item">
+          <button class="accordion__btn" aria-expanded="false">
+            <span class="accordion__question">How can I get help if I'm stuck on a challenge?</span>
+            <span class="accordion__icon-wrap">
+              <img src="icon-plus.svg" aria-hidden="true">
+            </span>
+          </button>
+          <div class="accordion__body" hidden>
+            <p>The best place to get help is inside Frontend Mentor's Discord community. There's a help channel where you can ask questions and seek support from other community members.</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </main>
+  <script>
+    document.querySelectorAll('.accordion__btn').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var item = btn.closest('.accordion__item');
+        var isOpen = item.classList.contains('accordion__item--open');
+
+        document.querySelectorAll('.accordion__item').forEach(function(i) {
+          i.classList.remove('accordion__item--open');
+          i.querySelector('.accordion__btn').setAttribute('aria-expanded', 'false');
+          i.querySelector('.accordion__body').hidden = true;
+          var iconWrap = i.querySelector('.accordion__icon-wrap');
+          iconWrap.classList.remove('accordion__icon-wrap--minus');
+          iconWrap.querySelector('img').src = './assets/images/icon-plus.svg';
+        });
+
+        if (!isOpen) {
+          item.classList.add('accordion__item--open');
+          btn.setAttribute('aria-expanded', 'true');
+          item.querySelector('.accordion__body').hidden = false;
+          var iconWrap = btn.querySelector('.accordion__icon-wrap');
+          iconWrap.classList.add('accordion__icon-wrap--minus');
+          iconWrap.querySelector('img').src = './assets/images/icon-minus.svg';
+        }
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,173 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Work Sans', sans-serif;
+  background-color: whitesmoke;
+  background-image: url('background-pattern-mobile.svg');
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: 100% auto;
+}
+
+main {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 88px 24px 40px;
+}
+
+.card {
+  background: white;
+  border-radius: 16px;
+  padding: 24px;
+  width: 100%;
+  max-width: 580px;
+  box-shadow: 0 32px 56px rgba(80, 0, 118, 0.1);
+}
+
+.card__header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.icon-star {
+  width: 24px;
+  height: 24px;
+}
+
+.card__header h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1E0E30;
+  line-height: 1;
+}
+
+.accordion {
+  list-style: none;
+}
+
+.accordion__item {
+  border-top: 1px solid #E8E3EA;
+  padding: 20px 0;
+}
+
+.accordion__item:last-child {
+  padding-bottom: 0;
+}
+
+.accordion__btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  text-align: left;
+}
+
+.accordion__question {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: #1E0E30;
+  line-height: 1.4;
+}
+
+.accordion__btn:hover .accordion__question {
+  color: #AD28EB;
+}
+
+.accordion__icon-wrap {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: #AD28EB;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.accordion__icon-wrap--minus {
+  background-color: #292F3C;
+}
+
+.accordion__body {
+  padding-top: 20px;
+}
+
+.accordion__body p {
+  font-size: 0.875rem;
+  color: #8B8B9D;
+  line-height: 1.7;
+}
+
+.attribution {
+  font-size: 0.6875rem;
+  text-align: center;
+  padding: 16px;
+  color: #8B8B9D;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+@media (min-width: 600px) {
+  body {
+    background-image: url('background-pattern-desktop.svg');
+  }
+
+  main {
+    padding: 80px 40px;
+  }
+
+  .card {
+    padding: 40px;
+    max-width: 680px;
+  }
+
+  .card__header {
+    margin-bottom: 28px;
+    gap: 24px;
+  }
+
+  .card__header h1 {
+    font-size: 3.5rem;
+  }
+
+  .icon-star {
+    width: 40px;
+    height: 40px;
+  }
+
+  .accordion__item {
+    padding: 24px 0;
+  }
+
+  .accordion__question {
+    font-size: 1.125rem;
+  }
+
+  .accordion__icon-wrap {
+    width: 36px;
+    height: 36px;
+  }
+
+  .accordion__body p {
+    font-size: 1rem;
+  }
+}
