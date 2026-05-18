@@ -77,7 +77,7 @@
           i.querySelector('.accordion__body').hidden = true;
           var iconWrap = i.querySelector('.accordion__icon-wrap');
           iconWrap.classList.remove('accordion__icon-wrap--minus');
-          iconWrap.querySelector('img').src = './assets/images/icon-plus.svg';
+          iconWrap.querySelector('img').src = 'icon-plus.svg';
         });
 
         if (!isOpen) {
@@ -86,7 +86,7 @@
           item.querySelector('.accordion__body').hidden = false;
           var iconWrap = btn.querySelector('.accordion__icon-wrap');
           iconWrap.classList.add('accordion__icon-wrap--minus');
-          iconWrap.querySelector('img').src = './assets/images/icon-minus.svg';
+          iconWrap.querySelector('img').src = 'icon-minus.svg';
         }
       });
     });
