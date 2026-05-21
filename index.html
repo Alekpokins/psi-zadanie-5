@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600;700&display=swap" rel="stylesheet">
@@ -14,7 +14,7 @@
   <main>
     <div class="card">
       <div class="card__header">
-        <img src="icon-star.svg" class="icon-star" aria-hidden="true">
+        <img src="icon-star.svg" alt="" class="icon-star" aria-hidden="true">
         <h1>FAQs</h1>
       </div>
       <ul class="accordion">
@@ -22,7 +22,7 @@
           <button class="accordion__btn" aria-expanded="true">
             <span class="accordion__question">What is Frontend Mentor, and how will it help me?</span>
             <span class="accordion__icon-wrap accordion__icon-wrap--minus">
-              <img src="icon-minus.svg" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="3" viewBox="0 0 14 3" aria-hidden="true"><rect width="14" height="3" rx="1.5" fill="#fff"/></svg>
             </span>
           </button>
           <div class="accordion__body">
@@ -33,7 +33,7 @@
           <button class="accordion__btn" aria-expanded="false">
             <span class="accordion__question">Is Frontend Mentor free?</span>
             <span class="accordion__icon-wrap">
-              <img src="icon-plus.svg" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><rect x="6" y="0" width="2" height="14" rx="1" fill="#fff"/><rect x="0" y="6" width="14" height="2" rx="1" fill="#fff"/></svg>
             </span>
           </button>
           <div class="accordion__body" hidden>
@@ -44,7 +44,7 @@
           <button class="accordion__btn" aria-expanded="false">
             <span class="accordion__question">Can I use Frontend Mentor projects in my portfolio?</span>
             <span class="accordion__icon-wrap">
-              <img src="icon-plus.svg" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><rect x="6" y="0" width="2" height="14" rx="1" fill="#fff"/><rect x="0" y="6" width="14" height="2" rx="1" fill="#fff"/></svg>
             </span>
           </button>
           <div class="accordion__body" hidden>
@@ -55,7 +55,7 @@
           <button class="accordion__btn" aria-expanded="false">
             <span class="accordion__question">How can I get help if I'm stuck on a challenge?</span>
             <span class="accordion__icon-wrap">
-              <img src="icon-plus.svg" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><rect x="6" y="0" width="2" height="14" rx="1" fill="#fff"/><rect x="0" y="6" width="14" height="2" rx="1" fill="#fff"/></svg>
             </span>
           </button>
           <div class="accordion__body" hidden>
@@ -66,6 +66,9 @@
     </div>
   </main>
   <script>
+    var PLUS_SVG = '<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><rect x="6" y="0" width="2" height="14" rx="1" fill="#fff"/><rect x="0" y="6" width="14" height="2" rx="1" fill="#fff"/></svg>';
+    var MINUS_SVG = '<svg xmlns="http://www.w3.org/2000/svg" width="14" height="3" viewBox="0 0 14 3" aria-hidden="true"><rect width="14" height="3" rx="1.5" fill="#fff"/></svg>';
+
     document.querySelectorAll('.accordion__btn').forEach(function(btn) {
       btn.addEventListener('click', function() {
         var item = btn.closest('.accordion__item');
@@ -77,7 +80,7 @@
           i.querySelector('.accordion__body').hidden = true;
           var iconWrap = i.querySelector('.accordion__icon-wrap');
           iconWrap.classList.remove('accordion__icon-wrap--minus');
-          iconWrap.querySelector('img').src = 'icon-plus.svg';
+          iconWrap.innerHTML = PLUS_SVG;
         });
 
         if (!isOpen) {
@@ -86,7 +89,7 @@
           item.querySelector('.accordion__body').hidden = false;
           var iconWrap = btn.querySelector('.accordion__icon-wrap');
           iconWrap.classList.add('accordion__icon-wrap--minus');
-          iconWrap.querySelector('img').src = 'icon-minus.svg';
+          iconWrap.innerHTML = MINUS_SVG;
         }
       });
     });
