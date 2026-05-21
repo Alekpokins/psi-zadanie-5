@@ -11,7 +11,7 @@ body {
   align-items: center;
   justify-content: center;
   font-family: 'Work Sans', sans-serif;
-  background-color: whitesmoke;
+  background-color: #F4E8FF;
   background-image: url('background-pattern-mobile.svg');
   background-repeat: no-repeat;
   background-position: top center;
@@ -26,7 +26,7 @@ main {
 }
 
 .card {
-  background: white;
+  background: #FFFFFF;
   border-radius: 16px;
   padding: 24px;
   width: 100%;
